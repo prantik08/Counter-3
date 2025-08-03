@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stylish Counter</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .counter-box {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .counter-value {
+      font-size: 5em;
+      color: #ff4e50;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .button-group button {
+      background-color: #f9d423;
+      border: none;
+      color: #fff;
+      font-size: 1.2em;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .button-group button:hover {
+      background-color: #ff4e50;
+    }
+
+    .button-group .reset {
+      background-color: #30cfcf;
+    }
+
+    .button-group .reset:hover {
+      background-color: #2fa9a9;
+    }
+  </style>
+</head>
+<body>
+  <div class="counter-box">
+    <div class="counter-value" id="counter">0</div>
+    <div class="button-group">
+      <button onclick="increase()">➕ Increase</button>
+      <button onclick="decrease()">➖ Decrease</button>
+      <button class="reset" onclick="reset()">🔁 Reset</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById("counter");
+
+    function update() {
+      counter.textContent = count;
+    }
+
+    function increase() {
+      count++;
+      update();
+    }
+
+    function decrease() {
+      count--;
+      update();
+    }
+
+    function reset() {
+      count = 0;
+      update();
+    }
+  </script>
+</body>
+</html>
